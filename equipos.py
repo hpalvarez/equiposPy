@@ -27,6 +27,7 @@ def Imprimir_Encabezado():
     print("------------------------------------------------------\n")
 
 def Imprimir_Contenido(equipos_ordenados):
+    """Imprime los datos de la tabla formateados"""
     for indice in range(0,len(equipos_ordenados)):
         print('{0: <22}'.format(equipos_ordenados[indice]['nombre_equipo']), end='')
         print('{0: <4}'.format(equipos_ordenados[indice]['puntos']), end='')
@@ -61,7 +62,7 @@ Cargar_Datos(equipos)
 
 Imprimir_Encabezado()
 
-# Imprimo el contenido
+# Imprimo el contenido, previa ordenación de la tabla por puntos de mayor a menor
 
 equipos_ordenados = sorted(equipos, key = itemgetter('puntos'), reverse = True)
 Imprimir_Contenido(equipos_ordenados)
